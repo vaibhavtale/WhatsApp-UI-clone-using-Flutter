@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:camera/camera.dart';
+import 'package:whatsapp/main.dart';
 import 'package:whatsapp/pages/calls_screen.dart';
 import 'package:whatsapp/pages/camera_screen.dart';
 import 'package:whatsapp/pages/chat_screen.dart';
 import 'package:whatsapp/pages/status_screen.dart';
+
+import 'main.dart';
 
 class WhatsAppHome extends StatefulWidget {
   const WhatsAppHome({Key? key}) : super(key: key);
@@ -50,7 +54,7 @@ with SingleTickerProviderStateMixin {
       body: TabBarView(
         controller: _tabcontroller,
         children: <Widget>[
-          CameraScreen(),
+          CameraScreen(widget.cameras),
           ChatScreen(),
           StatusScreen(),
           CallsScreen(),
